@@ -5,19 +5,19 @@ const projects = [
     name: "CantinaShop",
     description: "A Django-based e-commerce app for online shopping.",
     github: "https://github.com/Kiuliumov/CantinaShop",
-    image: "https://kiuliumov.github.io/images/cantinashoplogo.jpg",
+    image: "https://kiuliumov.github.io/portfolioV2/images/cantinashoplogo.jpg",
   },
   {
     name: "GDBOT",
     description: "A Geometry Dash Discord bot to track scores and levels.",
     github: "https://github.com/Kiuliumov/GDBOT",
-    image: "https://kiuliumov.github.io/images/gd.png",
+    image: "https://kiuliumov.github.io/portfolioV2/images/gd.png",
   },
   {
     name: "CasinoBot",
     description: "A casino-themed Discord bot with games and betting features.",
     github: "https://github.com/Kiuliumov/CasinoBot",
-    image: "https://kiuliumov.github.io/images/casino.png",
+    image: "https://kiuliumov.github.io/portfolioV2/images/casino.png",
   },
   {
     name: "nationalHeroes",
