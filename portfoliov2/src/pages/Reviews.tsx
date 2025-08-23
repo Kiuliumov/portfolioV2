@@ -125,7 +125,7 @@ const Reviews: React.FC = () => {
     <section className="relative bg-gray-900 text-white min-h-screen flex flex-col items-center justify-center py-16 px-6">
       <div className="absolute inset-0 bg-gradient-to-tr from-purple-600/20 via-sky-500/20 to-indigo-700/20 blur-3xl pointer-events-none"></div>
       <div className="relative z-10 w-full max-w-6xl flex flex-col items-center">
-        <h2 className="text-4xl font-extrabold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-purple-400">Customer Reviews</h2>
+        <h2 className="text-4xl font-extrabold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-purple-400 mt-10">Customer Reviews</h2>
 
         <div className="w-full flex flex-col lg:flex-row gap-8 h-[80vh] lg:h-[70vh]">
           

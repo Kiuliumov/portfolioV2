@@ -11,7 +11,6 @@ const certificates = [
   "https://kiuliumov.github.io/portfolioV2/images/programming-cert6.jpg",
   "https://kiuliumov.github.io/portfolioV2/images/programming-cert7.jpg",
   "https://kiuliumov.github.io/portfolioV2/images/programming-cert8.jpg",
-
 ];
 
 const Certifications: React.FC = () => {
@@ -22,25 +21,25 @@ const Certifications: React.FC = () => {
 
       {/* Title Section */}
       <div className="py-12 text-center relative z-10">
-        <h1 className="text-6xl md:text-7xl font-extrabold mt-20 bg-gradient-to-r from-purple-400 via-sky-400 to-indigo-500 bg-clip-text text-transparent drop-shadow-lg">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mt-20 bg-gradient-to-r from-purple-400 via-sky-400 to-indigo-500 bg-clip-text text-transparent drop-shadow-lg">
           Certifications
         </h1>
-        <div className="mt-4 h-1 w-24 mx-auto bg-gradient-to-r from-purple-400 via-sky-400 to-indigo-500 rounded-full animate-pulse" />
-        <p className="text-gray-300 mt-6 text-xl md:text-2xl">
+        <div className="mt-4 h-1 w-20 md:w-24 mx-auto bg-gradient-to-r from-purple-400 via-sky-400 to-indigo-500 rounded-full animate-pulse" />
+        <p className="text-gray-300 mt-4 text-lg md:text-xl lg:text-2xl">
           Showcasing achievements and skills
         </p>
       </div>
 
       {/* Marquee Section */}
-      <div className="flex-1 flex items-center overflow-hidden py-20 relative z-10">
+      <div className="flex-1 flex items-center overflow-hidden py-12 sm:py-16 lg:py-20 relative z-10">
         <div className="w-full">
-          <div className="flex animate-marquee gap-12">
+          <div className="flex animate-marquee gap-6 sm:gap-8 md:gap-12">
             {certificates.concat(certificates).map((src, index) => (
               <img
                 key={index}
                 src={src}
                 alt={`Certificate ${index + 1}`}
-                className="h-96 md:h-[28rem] lg:h-[32rem] object-contain rounded-xl shadow-2xl flex-shrink-0"
+                className="h-48 sm:h-64 md:h-80 lg:h-[28rem] xl:h-[32rem] object-contain rounded-xl shadow-2xl flex-shrink-0"
               />
             ))}
           </div>
@@ -59,9 +58,8 @@ const Certifications: React.FC = () => {
         }
         .animate-marquee {
           display: flex;
-          gap: 3rem;
           width: max-content;
-          animation: marquee 19s linear infinite;
+          animation: marquee 20s linear infinite;
         }
       `}</style>
     </div>

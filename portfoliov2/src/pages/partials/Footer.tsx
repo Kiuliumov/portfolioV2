@@ -14,7 +14,7 @@ const Footer = () => {
         {/* Logo */}
         <div className="flex items-center gap-2">
           <img
-            src="https://kiuliumov.github.io/images/The cantina logo.png"
+            src="https://kiuliumov.github.io/portfolioV2/images/The cantina logo.png"
             alt="The Cantina"
             className="w-28"
           />
