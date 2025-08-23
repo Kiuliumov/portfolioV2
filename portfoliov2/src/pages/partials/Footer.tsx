@@ -2,9 +2,9 @@ import { FaLinkedin, FaTwitter, FaGithub } from "react-icons/fa";
 
 const Footer = () => {
   const socialLinks = [
-    { icon: <FaLinkedin size={20} />, href: "https://linkedin.com" },
-    { icon: <FaTwitter size={20} />, href: "https://twitter.com" },
-    { icon: <FaGithub size={20} />, href: "https://github.com" },
+    { icon: <FaLinkedin size={20} />, href: "https://linkedin.com/Kiuliumov" },
+    { icon: <FaTwitter size={20} />, href: "https://x.com/DKiuliumov" },
+    { icon: <FaGithub size={20} />, href: "https://github.com/Kiuliumov" },
   ];
 
   return (
@@ -14,7 +14,7 @@ const Footer = () => {
         {/* Logo */}
         <div className="flex items-center gap-2">
           <img
-            src="/images/The cantina logo.png"
+            src="https://kiuliumov.github.io/images/The cantina logo.png"
             alt="The Cantina"
             className="w-28"
           />
