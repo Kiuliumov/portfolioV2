@@ -47,7 +47,7 @@ const Projects = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-12 md:py-20 md:px-12 w-full">
         {/* Page Title */}
         <h1 className="text-5xl font-extrabold mb-2 text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-sky-400 animate-fadeInUp">
-          My Projects
+          All Projects
         </h1>
         <p className="text-gray-400 text-center mb-12">
           This website is built with <span className="text-sky-400 font-semibold">React + TypeScript</span>

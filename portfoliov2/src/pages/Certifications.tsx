@@ -23,7 +23,7 @@ const Certifications: React.FC = () => {
       {/* Title Section */}
       <div className="py-12 text-center relative z-10">
         <h1 className="text-6xl md:text-7xl font-extrabold mt-20 bg-gradient-to-r from-purple-400 via-sky-400 to-indigo-500 bg-clip-text text-transparent drop-shadow-lg">
-          My Certifications
+          Certifications
         </h1>
         <div className="mt-4 h-1 w-24 mx-auto bg-gradient-to-r from-purple-400 via-sky-400 to-indigo-500 rounded-full animate-pulse" />
         <p className="text-gray-300 mt-6 text-xl md:text-2xl">
