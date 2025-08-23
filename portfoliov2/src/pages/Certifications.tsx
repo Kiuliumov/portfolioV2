@@ -1,16 +1,16 @@
 import React from "react";
 
 const certificates = [
-  "/images/programming-cert.png",
-  "/images/programming-cert2.png",
-  "/images/programming-cert3.png",
-  "/images/programming-cert4.png",
-  "/images/programming-cert5.png",
-  "/images/orm-certificate.png",
-  "/images/django.png",
-  "/images/programming-cert6.jpg",
-  "/images/programming-cert7.jpg",
-  "/images/programming-cert8.jpg",
+  "https://kiuliumov.github.io/portfolioV2/images/programming-cert.png",
+  "https://kiuliumov.github.io/portfolioV2/images/programming-cert2.png",
+  "https://kiuliumov.github.io/portfolioV2/images/programming-cert3.png",
+  "https://kiuliumov.github.io/portfolioV2/images/programming-cert4.png",
+  "https://kiuliumov.github.io/portfolioV2/images/programming-cert5.png",
+  "https://kiuliumov.github.io/portfolioV2/images/orm-certificate.png",
+  "https://kiuliumov.github.io/portfolioV2/images/django.png",
+  "https://kiuliumov.github.io/portfolioV2/images/programming-cert6.jpg",
+  "https://kiuliumov.github.io/portfolioV2/images/programming-cert7.jpg",
+  "https://kiuliumov.github.io/portfolioV2/images/programming-cert8.jpg",
 
 ];
 
