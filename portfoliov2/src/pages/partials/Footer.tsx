@@ -12,7 +12,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
 
         {/* Logo */}
-        <div className="flex items-center gap-2">
+        <div className="hidden md:flex items-center gap-2">
           <img
             src="https://kiuliumov.github.io/portfolioV2/images/The cantina logo.png"
             alt="The Cantina"
@@ -21,12 +21,12 @@ const Footer = () => {
         </div>
 
         {/* Centered Text */}
-        <div className="text-sm text-gray-400 text-center">
+        <div className="text-sm text-gray-400 text-center flex-1">
           &copy; {new Date().getFullYear()} The Cantina. All rights reserved.
         </div>
 
         {/* Social icons */}
-        <div className="flex items-center gap-4">
+        <div className="hidden md:flex items-center gap-4">
           {socialLinks.map((link, idx) => (
             <a
               key={idx}
