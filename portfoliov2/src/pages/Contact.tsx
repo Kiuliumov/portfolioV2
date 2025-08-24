@@ -3,7 +3,6 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import { FaUser, FaEnvelope, FaCommentDots } from "react-icons/fa";
 
-// Firebase config
 const firebaseConfig = {
   apiKey: "AIzaSyAj4hbemsnaFT6kaX3uffXiTf93ZdQQeWs",
   authDomain: "reviews-7bc09.firebaseapp.com",
@@ -14,7 +13,6 @@ const firebaseConfig = {
   measurementId: "G-9503YFZX7X",
 };
 
-// Initialize Firebase
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }

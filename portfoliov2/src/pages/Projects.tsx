@@ -49,7 +49,6 @@ const Projects = () => {
 			<div className="absolute inset-0 bg-gradient-to-tr from-purple-600/10 via-sky-400/20 to-indigo-700/10 blur-3xl pointer-events-none"></div>
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 py-12 md:py-20 md:px-12 w-full">
-				{/* Page Title */}
 				<h1 className="text-5xl font-extrabold mb-2 mt-15 text-center leading-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-sky-400 animate-fadeInUp">
 					My Projects
 				</h1>
@@ -59,7 +58,6 @@ const Projects = () => {
 					<span className="text-sky-400 font-semibold">React + TypeScript</span>
 				</p>
 
-				{/* Projects Grid */}
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 animate-fadeInUp">
 					{projects.map((project, index) => (
 						<div
@@ -95,7 +93,6 @@ const Projects = () => {
 					))}
 				</div>
 
-				{/* GitHub Link */}
 				<div className="pt-16 flex justify-center">
 					<a
 						href="https://github.com/Kiuliumov"

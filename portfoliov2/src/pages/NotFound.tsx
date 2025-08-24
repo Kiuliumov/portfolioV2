@@ -6,8 +6,6 @@ const NotFound = () => {
 
   return (
     <section className="relative flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white px-6 text-center overflow-hidden">
-
-      {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-tr from-purple-600/10 via-sky-400/20 to-indigo-700/10 blur-3xl pointer-events-none"></div>
 
       <h1 className="text-9xl font-extrabold text-sky-500 animate-pulse relative z-10">404</h1>

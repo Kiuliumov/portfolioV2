@@ -3,12 +3,10 @@ import { FaGithub } from "react-icons/fa";
 const About = () => {
 	return (
 		<section className="relative bg-gray-900 text-white min-h-screen flex flex-col justify-center items-center overflow-hidden">
-			{/* Background gradient overlay */}
 			<div className="absolute inset-0 bg-gradient-to-tr from-purple-600/10 via-sky-400/20 to-indigo-700/10 blur-3xl pointer-events-none"></div>
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 py-12 md:py-20 md:px-12 w-full">
 				<div className="flex flex-col md:flex-row md:items-center md:gap-16">
-					{/* Image */}
 					<div className="flex justify-center md:justify-end mb-8 md:mb-0 animate-fadeInUp">
 						<img
 							src="https://kiuliumov.github.io/portfolioV2/images/cantina.png"
@@ -17,7 +15,6 @@ const About = () => {
 						/>
 					</div>
 
-					{/* Text Content */}
 					<div className="flex flex-col justify-center space-y-6 animate-fadeInUp">
 						<h1 className="text-4xl md:text-6xl font-extrabold text-center md:text-left">
 							About Us
