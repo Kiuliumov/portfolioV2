@@ -16,10 +16,8 @@ const certificates = [
 const Certifications: React.FC = () => {
   return (
     <div className="relative min-h-screen bg-gray-900 text-white flex flex-col">
-      {/* Background gradient blur */}
       <div className="absolute inset-0 bg-gradient-to-tr from-purple-600/10 via-sky-400/20 to-indigo-700/10 blur-3xl pointer-events-none" />
 
-      {/* Title Section */}
       <div className="py-12 text-center relative z-10">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mt-20 bg-gradient-to-r from-purple-400 via-sky-400 to-indigo-500 bg-clip-text text-transparent drop-shadow-lg">
           Certifications
@@ -30,7 +28,6 @@ const Certifications: React.FC = () => {
         </p>
       </div>
 
-      {/* Marquee Section */}
       <div className="flex-1 flex items-center overflow-hidden py-12 sm:py-16 lg:py-20 relative z-10">
         <div className="w-full">
           <div className="flex animate-marquee gap-6 sm:gap-8 md:gap-12">
@@ -46,7 +43,6 @@ const Certifications: React.FC = () => {
         </div>
       </div>
 
-      {/* Tailwind CSS Marquee Animation */}
       <style>{`
         @keyframes marquee {
           0% {
