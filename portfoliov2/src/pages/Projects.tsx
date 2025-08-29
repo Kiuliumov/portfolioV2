@@ -45,7 +45,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section className="relative mt-20 bg-gray-900 text-white min-h-screen flex flex-col items-center overflow-hidden">
+    <section className="relative pt-20 bg-gray-900 text-white min-h-screen flex flex-col items-center overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-tr from-purple-700/20 via-sky-500/20 to-indigo-800/20 blur-3xl pointer-events-none animate-fadeIn"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-12 md:py-20 md:px-12 w-full">
