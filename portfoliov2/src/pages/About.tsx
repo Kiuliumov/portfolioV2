@@ -2,7 +2,7 @@ import { FaGithub } from "react-icons/fa";
 
 const About = () => {
 	return (
-		<section className="relative bg-gray-900 text-white min-h-screen flex flex-col justify-center items-center overflow-hidden">
+		<section className="relative mt-20 bg-gray-900 text-white min-h-screen flex flex-col justify-center items-center overflow-hidden">
 			<div className="absolute inset-0 bg-gradient-to-tr from-purple-600/10 via-sky-400/20 to-indigo-700/10 blur-3xl pointer-events-none"></div>
 
 			<div className="relative z-10 max-w-7xl mx-auto px-6 py-12 md:py-20 md:px-12 w-full">
