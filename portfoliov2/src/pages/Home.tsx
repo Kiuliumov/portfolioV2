@@ -54,14 +54,14 @@ const Home = () => {
             </h1>
             <p className="text-gray-300 leading-relaxed text-center md:text-left max-w-xl">
               Hello! I'm a <span className="text-sky-400">full-stack developer</span> from Bulgaria with a strong passion for programming and mathematics.  
-              I am currently going after a degree in {" "}
+              <br></br>I am currently pursuing a degree in Computer Science at the {" "}
               <a
                 href="https://fpmi.bg/cms/informatics/"
                 target="_blank"
                 rel="noreferrer"
                 className="underline text-red-300 hover:text-red-400"
               >
-                Computer Science at the Technical University of Sofia
+                Technical University of Sofia
               </a>.
             </p>
 
