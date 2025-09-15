@@ -54,7 +54,7 @@ const Home = () => {
             </h1>
             <p className="text-gray-300 leading-relaxed text-center md:text-left max-w-xl">
               Hello! I'm a <span className="text-sky-400">full-stack developer</span> from Bulgaria with a strong passion for programming and mathematics.  
-              After graduating from high school, I will go after a degree in{" "}
+              I am currently going after a degree in {" "}
               <a
                 href="https://fpmi.bg/cms/informatics/"
                 target="_blank"
