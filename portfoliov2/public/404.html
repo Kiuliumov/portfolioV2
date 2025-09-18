@@ -1,16 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>404 - Page Not Found</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <section>
-    <h1>404</h1>
-    <h2>Page Not Found</h2>
-    <p>Oops! The page you’re looking for doesn’t exist or has been moved.</p>
-    <a href="/">Go Home</a>
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen px-6 overflow-hidden">
+  
+  <!-- Background Gradient Blur -->
+  <div class="absolute inset-0 bg-gradient-to-tr from-purple-600/10 via-sky-400/20 to-indigo-700/10 blur-3xl pointer-events-none"></div>
+
+  <section class="relative z-10 text-center flex flex-col items-center justify-center">
+    <h1 class="text-9xl font-extrabold text-sky-500 animate-pulse">404</h1>
+    <h2 class="text-3xl md:text-4xl font-bold mt-6">Page Not Found</h2>
+    <p class="text-gray-400 mt-2 max-w-md">
+      Oops! The page you’re looking for doesn’t exist or has been moved.
+    </p>
+    <a href="/" class="mt-8 px-6 py-3 bg-sky-500 hover:bg-sky-400 rounded-lg flex items-center gap-2 font-medium transition-transform transform hover:scale-105">
+      <!-- Home Icon as SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M13 5v6h6m-6 0H7v6h6v-6z" />
+      </svg>
+      Go Home
+    </a>
   </section>
+
 </body>
 </html>
