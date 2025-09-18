@@ -1,54 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<title>The Cantina</title>
+  <title>The Cantina | Kiuliumov Portfolio</title>
 
-		<link rel="icon" href="/portfolioV2/images/cantina.png" type="image/svg+xml" />
+  <!-- Favicon -->
+  <link rel="icon" href="/portfolioV2/images/cantina.png" type="image/svg+xml" />
 
-		<meta
-			name="description"
-			content="Kiuliumov portfolio showcasing projects like The Cantina, Kenobi, Crescendo, and more in coding, web development, and design."
-		/>
-		<meta
-			name="keywords"
-			content="Kiuliumov, kiuliumov, Кюлюмов, Cantina, The Cantina, Kenobi, Crescendo, coding, web development, portfolio, programming, JavaScript, TypeScript, React, frontend, projects"
-		/>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Kiuliumov portfolio showcasing projects like The Cantina, Kenobi, Crescendo, and more in coding, web development, and design." />
+  <meta name="keywords" content="Kiuliumov, kiuliumov, Кюлюмов, Cantina, The Cantina, Kenobi, Crescendo, coding, web development, portfolio, programming, JavaScript, TypeScript, React, frontend, projects" />
+  <meta name="robots" content="index, follow" />
 
-		<meta
-			property="og:title"
-			content="Kiuliumov Portfolio | The Cantina & Projects"
-		/>
-		<meta
-			property="og:description"
-			content="Explore Kiuliumov's coding projects including The Cantina, Kenobi, Crescendo, and more."
-		/>
-		<meta property="og:image" content="/portfolioV2/images/cantina.png" />
-		<meta property="og:type" content="website" />
-		<script type="module" crossorigin src="/portfolioV2/assets/index-BNfrSnfi.js"></script>
-		<link rel="stylesheet" crossorigin href="/portfolioV2/assets/index-BGD1Hw5j.css">
-	</head>
-	<body>
-		<h1 style="display: none"></h1>
-		<div id="root"></div>
-		<script type="application/ld+json">
-			{
-				"@context": "https://schema.org",
-				"@type": "Person",
-				"name": "Kiuliumov",
-				"url": "https://username.github.io/",
-				"sameAs": [
-					"https://github.com/username",
-					"https://linkedin.com/in/username"
-				],
-				"knowsAbout": ["JavaScript", "TypeScript", "React", "Web Development"],
-				"worksFor": {
-					"@type": "Organization",
-					"name": "The Cantina"
-				}
-			}
-		</script>
-	</body>
+  <!-- Open Graph -->
+  <meta property="og:title" content="Kiuliumov Portfolio | The Cantina & Projects" />
+  <meta property="og:description" content="Explore Kiuliumov's coding projects including The Cantina, Kenobi, Crescendo, and more." />
+  <meta property="og:image" content="/portfolioV2/images/cantina.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://username.github.io/portfolioV2/" />
+
+  <!-- Visually hidden H1 for SEO -->
+  <style>
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+
+  <!-- Vite entry point (do NOT hardcode hashed files) -->
+  <script type="module" crossorigin src="/portfolioV2/assets/index-BNfrSnfi.js"></script>
+  <link rel="stylesheet" crossorigin href="/portfolioV2/assets/index-BGD1Hw5j.css">
+</head>
+<body>
+  <!-- SEO H1 -->
+  <h1 class="visually-hidden">Kiuliumov Portfolio – The Cantina, Kenobi, Crescendo & More</h1>
+
+  <div id="root"></div>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Kiuliumov",
+    "url": "https://username.github.io/portfolioV2/",
+    "sameAs": [
+      "https://github.com/username",
+      "https://linkedin.com/in/username"
+    ],
+    "knowsAbout": ["JavaScript", "TypeScript", "React", "Web Development"],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "The Cantina"
+    }
+  }
+  </script>
+</body>
 </html>
