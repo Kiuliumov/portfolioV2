@@ -65,7 +65,7 @@ const Contact: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-tr from-purple-600/10 via-sky-400/20 to-indigo-700/10 blur-3xl pointer-events-none"></div>
       
       <div className="relative z-10 w-full max-w-3xl px-6 py-16 md:py-20 flex flex-col items-center">
-        <h2 className="text-4xl font-extrabold mb-4 text-center text-sky-400 pt-5">Contact Me</h2>
+        <h2 className="text-4xl font-extrabold mb-4 text-center text-sky-400 pt-20">Contact Me</h2>
         <p className="text-gray-300 text-center mb-12">
           Have a question or want to work together? Fill out the form below and I’ll get back to you as soon as possible.
         </p>
