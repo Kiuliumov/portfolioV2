@@ -11,6 +11,7 @@ const certificates = [
   "https://kiuliumov.github.io/portfolioV2/images/programming-cert6.jpg",
   "https://kiuliumov.github.io/portfolioV2/images/programming-cert7.jpg",
   "https://kiuliumov.github.io/portfolioV2/images/programming-cert8.jpg",
+  "https://kiuliumov.github.io/portfolioV2/images/programming-cert9.jpg"
 ];
 
 const Certifications: React.FC = () => {
