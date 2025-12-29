@@ -36,44 +36,51 @@ const Projects = () => {
         </h1>
 
         <p className="text-gray-300 text-center mb-12 text-lg md:text-xl">
-          Built with <span className="text-sky-400 font-semibold">React + TypeScript</span>
+          This website is built with{" "}
+          <span className="text-sky-400 font-semibold">React + TypeScript</span>
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="relative bg-gray-800/90 backdrop-blur-md rounded-3xl p-6 shadow-xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 border border-gray-700"
+              className="relative group rounded-3xl p-[1px] bg-gradient-to-br from-white/10 via-white/5 to-transparent 
+                         hover:from-sky-500/40 hover:to-purple-500/40 transition-all duration-500"
             >
-              <div className="relative overflow-hidden rounded-2xl mb-4">
-                <img
-                  src={project.image}
-                  alt={project.name}
-                  className="w-full h-48 object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </div>
+              <div className="relative bg-gray-900/90 backdrop-blur-xl rounded-3xl p-6 
+                              shadow-[0_20px_40px_rgba(0,0,0,0.6)]
+                              transition-all duration-500 group-hover:scale-[1.03]">
 
-              <h3 className="text-2xl font-bold text-white mb-1">
-                {project.name}
-              </h3>
+                <div className="relative overflow-hidden rounded-2xl mb-4">
+                  <img
+                    src={project.image}
+                    alt={project.name}
+                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
 
-              <div className="h-1 w-12 bg-gradient-to-r from-purple-500 to-sky-400 rounded-full mb-3" />
+                <h3 className="text-2xl font-bold text-white mb-1">
+                  {project.name}
+                </h3>
 
-              <p className="text-gray-200 leading-relaxed">
-                {project.description}
-              </p>
+                <div className="h-1 w-12 bg-gradient-to-r from-purple-500 to-sky-400 rounded-full mb-3" />
 
-              <div className="pt-4">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={`inline-flex items-center gap-2 px-5 py-2 rounded-xl text-white font-medium 
-                  bg-gradient-to-r ${project.buttonColor}
-                  hover:brightness-110 transition-all duration-300 hover:scale-105`}
-                >
-                  <FaGithub /> View on GitHub
-                </a>
+                <p className="text-gray-200 leading-relaxed">
+                  {project.description}
+                </p>
+
+                <div className="pt-4">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={`inline-flex items-center gap-2 px-5 py-2 rounded-xl text-white font-medium 
+                    bg-gradient-to-r ${project.buttonColor}
+                    hover:brightness-110 transition-all duration-300 hover:scale-105`}
+                  >
+                    <FaGithub /> View on GitHub
+                  </a>
+                </div>
               </div>
             </div>
           ))}
