@@ -30,12 +30,13 @@ const Projects = () => {
     <section className="relative pt-20 bg-gray-900 text-white min-h-screen flex flex-col items-center overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-tr from-purple-700/20 via-sky-500/20 to-indigo-800/20 blur-3xl pointer-events-none" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-12 md:py-20 w-full">
-        <h1 className="text-5xl md:text-6xl font-extrabold mb-4 text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-sky-400">
-          My Projects
-        </h1>
+      <div className="relative z-0 max-w-7xl mx-auto px-6 py-12 md:py-20 w-full">
+      <h1 className="relative isolate text-5xl md:text-6xl font-extrabold mb-2 text-center">
+        My Projects
+      </h1>
 
-        <p className="text-gray-300 text-center mb-12 text-lg md:text-xl">
+
+        <p className="text-gray-300 z-0 text-center mt-5 mb-12 text-lg md:text-xl">
           This website is built with{" "}
           <span className="text-sky-400 font-semibold">React + TypeScript</span>
         </p>
