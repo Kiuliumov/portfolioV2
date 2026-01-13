@@ -18,7 +18,7 @@ const NotFound = () => {
       </p>
 
       <button
-        onClick={() => navigate("/")}
+        onClick={() => navigate("https://kiuliumov.github.io/portfolioV2/")}
         className="mt-8 px-6 py-3 bg-sky-500 hover:bg-sky-400 rounded-lg flex items-center gap-2 font-medium transition-transform transform hover:scale-105 relative z-10"
       >
         <FaHome /> Go Home
