@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import CV from '../../assets/CV.pdf';
+import CV from "../../assets/CV.pdf";
 
 const Nav = () => {
 	const [menuOpen, setMenuOpen] = useState(false);
@@ -120,7 +120,7 @@ const Nav = () => {
 						</Link>
 					))}
 					<a
-						href="/CV.pdf"
+						href={CV}
 						download
 						className="bg-sky-400 text-white px-6 py-3 rounded-md font-medium hover:bg-sky-500 transition-colors duration-200"
 						onClick={() => setMenuOpen(false)}
