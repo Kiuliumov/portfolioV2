@@ -16,8 +16,6 @@ const skills = [
   { name: "Django", icon: <SiDjango /> },
   { name: ".NET / ASP.NET", icon: <SiDotnet /> },
   { name: "Next.js", icon: <SiNextdotjs /> },
-  { name: "UI/UX" },
-  { name: "ChatBots" },
   { name: "MySQL", icon: <SiMysql /> },
   { name: "PostgreSQL", icon: <SiPostgresql /> },
   { name: "SQLite", icon: <SiSqlite /> },
