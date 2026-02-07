@@ -40,7 +40,7 @@ const Home = () => {
 
           <div className="flex justify-center md:justify-end mb-8 md:mb-0 animate-fadeInUp mt-20">
             <img
-              src="https://kiuliumov.github.io/portfolioV2/images/image-banner.jpg"
+              src="https://kiuliumov.github.io/portfolioV2/images/image-banner.png"
               alt="Dimitur Kiuliumov"
               className="rounded-2xl shadow-2xl max-w-xs sm:max-w-sm md:max-w-lg transform transition-transform duration-500 hover:scale-105"
             />
