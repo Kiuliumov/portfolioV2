@@ -25,7 +25,7 @@ const skills = [
 ];
 
 const socialLinks = [
-  { icon: <FaLinkedin size={24} />, href: "https://www.linkedin.com/in/Kiuliumov" },
+  { icon: <FaLinkedin size={24} />, href: "https://www.linkedin.com/in/dimitar-kiuliumov-0088942a2/" },
   { icon: <FaTwitter size={24} />, href: "https://x.com/DKiuliumov" },
   { icon: <FaGithub size={24} />, href: "https://github.com/Kiuliumov" },
 ];
