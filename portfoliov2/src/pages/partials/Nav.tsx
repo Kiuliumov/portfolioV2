@@ -11,7 +11,6 @@ const Nav = () => {
 		{ title: "Certifications", path: "/certifications" },
 		{ title: "About", path: "/about" },
 		{ title: "Contacts", path: "/contact" },
-		{ title: "Projects", path: "/projects" },
 	];
 
 	useEffect(() => {

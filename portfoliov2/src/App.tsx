@@ -4,7 +4,6 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Certifications from "./pages/Certifications";
-import Projects from "./pages/Projects";
 import Footer from "./pages/partials/Footer";
 import NotFound from "./pages/NotFound"; 
 
@@ -19,7 +18,6 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/certifications" element={<Certifications></Certifications>} />
-          <Route path="/projects" element={<Projects />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
