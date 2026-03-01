@@ -3,6 +3,8 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import { FaUser, FaEnvelope, FaCommentDots } from "react-icons/fa";
 
+
+// Exposed API secrets, due to the limitations in github pages. Firebase rules don't allow foreign connections, so you can't really do anything with the secrets.
 const firebaseConfig = {
   apiKey: "AIzaSyAj4hbemsnaFT6kaX3uffXiTf93ZdQQeWs",
   authDomain: "reviews-7bc09.firebaseapp.com",
