@@ -45,6 +45,10 @@ const certificates = [
   {
     img: "https://kiuliumov.github.io/portfolioV2/images/programming-cert9.png",
     link: "https://softuni.bg/certificates/details/252812/64e34486"
+  },
+  {
+    img: "https://kiuliumov.github.io/portfolioV2/images/cert-10.png",
+    link: "https://softuni.bg/certificates/details/257357/7896a680"
   }
 ];
 
