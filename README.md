@@ -10,4 +10,4 @@ My developer portfolio built with React, TypeScript, and Tailwind.
 -   Firebase (contact form)
 
 
-https://kiuliumov.github.io/portfolioV2/
+https://kiuliumov.eu
