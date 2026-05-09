@@ -3,7 +3,7 @@
 
   <!-- Homepage -->
   <url>
-    <loc>https://kiuliumov.github.io/portfolioV2/</loc>
+    <loc>https://kiuliumov.eu</loc>
     <lastmod>2025-09-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -11,7 +11,7 @@
 
   <!-- Projects Page -->
   <url>
-    <loc>https://kiuliumov.github.io/portfolioV2/projects</loc>
+    <loc>https://kiuliumov.eu/projects</loc>
     <lastmod>2025-09-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -19,7 +19,7 @@
 
   <!-- Certifications Page -->
   <url>
-    <loc>https://kiuliumov.github.io/portfolioV2/certifications</loc>
+    <loc>https://kiuliumov.eu/certifications</loc>
     <lastmod>2025-09-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -27,7 +27,7 @@
 
   <!-- Contacts Page -->
   <url>
-    <loc>https://kiuliumov.github.io/portfolioV2/contacts</loc>
+    <loc>https://kiuliumov.eu/contacts</loc>
     <lastmod>2025-09-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -35,7 +35,7 @@
 
   <!-- About Page -->
   <url>
-    <loc>https://kiuliumov.github.io/portfolioV2/about</loc>
+    <loc>https://kiuliumov.eu/portfolioV2/about</loc>
     <lastmod>2025-09-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
