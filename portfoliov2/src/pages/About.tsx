@@ -9,7 +9,7 @@ const About = () => {
 				<div className="flex flex-col md:flex-row md:items-center md:gap-16">
 					<div className="flex justify-center md:justify-end mb-8 md:mb-0 animate-fadeInUp">
 						<img
-							src="https://kiuliumov.github.io/portfolioV2/images/cantina.png"
+							src="https://kiuliumov.eu/images/cantina.png"
 							alt="The Cantina"
 							className="rounded-2xl shadow-2xl max-w-xs sm:max-w-sm md:max-w-lg transform transition-transform duration-500 hover:scale-105"
 						/>
