@@ -1,6 +1,6 @@
 # Portfolio V2
 
-Minimal developer portfolio built with React, TypeScript, and Tailwind.
+My developer portfolio built with React, TypeScript, and Tailwind.
 
 ## Stack
 
