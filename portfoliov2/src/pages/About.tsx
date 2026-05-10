@@ -20,29 +20,30 @@ const About = () => {
 							About Us
 						</h1>
 						<p className="text-gray-300 leading-relaxed text-center md:text-left max-w-xl">
-							The Cantina is a self-run project with no outside financing. Our
-							mission is to create the best chatbots in the market while
-							building modern, responsive web applications.
+							The Cantina began as a Discord community in 2021 and evolved into an
+							independent organization founded by Dimitar Kiuliumov. Focused on building
+							custom chatbots, automation systems, and modern web services, The Cantina
+							combines creativity, performance, and innovation to deliver reliable
+							digital solutions for communities, businesses, and creators. It is also a community, 
+							<br/><br/>
+							Beyond development, The Cantina is also a growing community for developers,
+							creators, and technology enthusiasts — serving as a collaborative developer
+							lab where ideas are tested, projects are built, and innovation is shared
+							between passionate members of the community.
+							<br/><br/>
+							With over 5 years of collaborative development experience, The Cantina has
+							created and maintained a variety of successful Discord projects used by
+							hundreds of users across many communities. Among them was <strong>Kenobi</strong> in 2021,
+							a powerful and widely used Discord administration bot designed to simplify
+							server management, moderation, and automation. Another standout project,
+							<strong>Crescendo</strong>, became one of the most popular music and utility
+							bots during 2022, known for its reliability, performance, and modern user
+							experience.
+							<br/><br/>
+							From moderation systems and entertainment bots to fully custom integrations
+							and web platforms, The Cantina continues to push forward with the goal of
+							building high-quality software that communities genuinely enjoy using.
 						</p>
-
-						<ul className="flex flex-col gap-2 text-gray-300 max-w-xl list-disc list-inside">
-							<li>
-								🤖 Experienced in building custom Discord bots with JavaScript
-								and Python
-							</li>
-							<li>
-								🌐 Skilled at creating modern, responsive web apps using React
-								and Tailwind
-							</li>
-							<li>
-								⚙️ Integrating APIs, handling databases, and automating tasks
-							</li>
-							<li>
-								🚀 Always learning new frameworks and best practices in
-								full-stack development
-							</li>
-							<li>Our goal is to create the best chatbots in the market.</li>
-						</ul>
 
 						<div className="flex flex-col sm:flex-row justify-center md:justify-start gap-6 pt-4">
 							<a
