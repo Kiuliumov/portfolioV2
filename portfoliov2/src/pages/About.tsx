@@ -16,7 +16,7 @@ const About = () => {
 					</div>
 
 					<div className="flex flex-col justify-center space-y-6 animate-fadeInUp">
-						<h1 className="text-4xl md:text-6xl font-extrabold text-center md:text-left">
+						<h1 className="text-4xl md:text-6xl font-extrabold text-center">
 							About Us
 						</h1>
 						<p className="text-gray-300 leading-relaxed text-center md:text-left max-w-xl">
