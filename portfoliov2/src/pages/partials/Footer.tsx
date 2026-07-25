@@ -2,7 +2,10 @@ import { FaLinkedin, FaTwitter, FaGithub } from "react-icons/fa";
 
 const Footer = () => {
   const socialLinks = [
-    { icon: <FaLinkedin size={20} />, href: "https://www.linkedin.com/in/dimitar-kiuliumov-0088942a2/" },
+    {
+      icon: <FaLinkedin size={20} />,
+      href: "https://www.linkedin.com/in/dimitar-kiuliumov-0088942a2/",
+    },
     { icon: <FaTwitter size={20} />, href: "https://x.com/DKiuliumov" },
     { icon: <FaGithub size={20} />, href: "https://github.com/Kiuliumov" },
   ];
@@ -10,7 +13,6 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-gray-400 px-4 py-4 w-full">
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
-
         <div className="hidden md:flex items-center gap-2">
           <img
             src="https://kiuliumov.eu/images/The cantina logo.png"
@@ -36,7 +38,6 @@ const Footer = () => {
             </a>
           ))}
         </div>
-
       </div>
     </footer>
   );

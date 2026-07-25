@@ -1,5 +1,30 @@
-import { FaReact, FaNodeJs, FaAngular, FaGithub, FaLinkedin, FaTwitter, FaPython, FaJava, FaHtml5, FaCss3} from 'react-icons/fa';
-import { SiTypescript, SiDjango, SiExpress, SiSharp, SiMysql, SiPostgresql, SiSqlite, SiFirebase, SiGooglecloud, SiAmazon, SiDotnet, SiCplusplus, SiNextdotjs } from 'react-icons/si';
+import {
+  FaReact,
+  FaNodeJs,
+  FaAngular,
+  FaGithub,
+  FaLinkedin,
+  FaTwitter,
+  FaPython,
+  FaJava,
+  FaHtml5,
+  FaCss3,
+} from "react-icons/fa";
+import {
+  SiTypescript,
+  SiDjango,
+  SiExpress,
+  SiSharp,
+  SiMysql,
+  SiPostgresql,
+  SiSqlite,
+  SiFirebase,
+  SiGooglecloud,
+  SiAmazon,
+  SiDotnet,
+  SiCplusplus,
+  SiNextdotjs,
+} from "react-icons/si";
 
 const skills = [
   { name: "C++", icon: <SiCplusplus /> },
@@ -25,7 +50,10 @@ const skills = [
 ];
 
 const socialLinks = [
-  { icon: <FaLinkedin size={24} />, href: "https://www.linkedin.com/in/dimitar-kiuliumov-0088942a2/" },
+  {
+    icon: <FaLinkedin size={24} />,
+    href: "https://www.linkedin.com/in/dimitar-kiuliumov-0088942a2/",
+  },
   { icon: <FaTwitter size={24} />, href: "https://x.com/DKiuliumov" },
   { icon: <FaGithub size={24} />, href: "https://github.com/Kiuliumov" },
 ];
@@ -37,7 +65,6 @@ const Home = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-12 md:py-20 md:px-12 w-full">
         <div className="flex flex-col md:flex-row md:items-center md:gap-16">
-
           <div className="flex justify-center md:justify-end mb-8 md:mb-0 animate-fadeInUp mt-20">
             <img
               src="https://kiuliumov.eu/images/image-banner.jpg"
@@ -51,10 +78,13 @@ const Home = () => {
               Dimitur Kiuliumov
             </h1>
             <p className="text-gray-300 leading-relaxed text-center md:text-left max-w-xl">
-              Hello! I'm a <span className="text-sky-400">full-stack developer</span> from Bulgaria with a strong passion for programming and mathematics.  
-              <br />
-                I am currently working as a <span className="text-sky-400">Python Developer</span> at{" "}
-              <span className="text-sky-400">Nemetschek Bulgaria</span> and pursuing a degree in Computer Science at the{" "}
+              Hello! I'm a{" "}
+              <span className="text-sky-400">full-stack developer</span> from
+              Bulgaria with a strong passion for programming and mathematics.
+              <br />I am currently working as a{" "}
+              <span className="text-sky-400">Python Developer</span> at{" "}
+              <span className="text-sky-400">Nemetschek Bulgaria</span> and
+              pursuing a degree in Computer Science at the{" "}
               <a
                 href="https://fpmi.bg/cms/informatics/"
                 target="_blank"
@@ -62,7 +92,8 @@ const Home = () => {
                 className="underline text-red-300 hover:text-red-400"
               >
                 Technical University of Sofia
-              </a>.
+              </a>
+              .
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-6 pt-6">
@@ -86,7 +117,13 @@ const Home = () => {
 
             <div className="flex justify-center md:justify-start gap-6 pt-4 text-gray-400">
               {socialLinks.map((link, index) => (
-                <a key={index} href={link.href} target="_blank" rel="noreferrer" className="hover:text-sky-400 transition-transform duration-300 transform hover:scale-110">
+                <a
+                  key={index}
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-sky-400 transition-transform duration-300 transform hover:scale-110"
+                >
                   {link.icon}
                 </a>
               ))}
@@ -95,7 +132,9 @@ const Home = () => {
         </div>
 
         <div className="pt-16 animate-fadeInUp">
-          <h2 className="text-xl font-semibold text-sky-400 text-center md:text-left">My Skills:</h2>
+          <h2 className="text-xl font-semibold text-sky-400 text-center md:text-left">
+            My Skills:
+          </h2>
           <div className="flex flex-wrap gap-3 pt-4 justify-center md:justify-start">
             {skills.map((skill, index) => (
               <span
@@ -107,7 +146,6 @@ const Home = () => {
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );

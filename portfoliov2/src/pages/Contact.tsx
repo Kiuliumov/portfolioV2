@@ -3,7 +3,6 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import { FaUser, FaEnvelope, FaCommentDots } from "react-icons/fa";
 
-
 // Exposed API secrets, due to the limitations in github pages. Firebase rules don't allow foreign connections, so you can't really do anything with the secrets.
 const firebaseConfig = {
   apiKey: "AIzaSyAj4hbemsnaFT6kaX3uffXiTf93ZdQQeWs",
@@ -27,11 +26,17 @@ interface FormData {
 }
 
 const Contact: React.FC = () => {
-  const [formData, setFormData] = useState<FormData>({ name: "", email: "", message: "" });
+  const [formData, setFormData] = useState<FormData>({
+    name: "",
+    email: "",
+    message: "",
+  });
   const [formMessage, setFormMessage] = useState("");
   const [messageColor, setMessageColor] = useState("text-gray-700");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -57,7 +62,9 @@ const Contact: React.FC = () => {
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
       console.error("Error sending message:", error);
-      setFormMessage("There was an error sending your message. Please try again.");
+      setFormMessage(
+        "There was an error sending your message. Please try again.",
+      );
       setMessageColor("text-gray-700");
     }
   };
@@ -65,11 +72,14 @@ const Contact: React.FC = () => {
   return (
     <section className="relative bg-gray-900 text-white min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-tr from-purple-600/10 via-sky-400/20 to-indigo-700/10 blur-3xl pointer-events-none"></div>
-      
+
       <div className="relative z-10 w-full max-w-3xl px-6 py-16 md:py-20 flex flex-col items-center">
-        <h2 className="text-4xl font-extrabold mb-4 text-center text-sky-400 pt-20">Contact Me</h2>
+        <h2 className="text-4xl font-extrabold mb-4 text-center text-sky-400 pt-20">
+          Contact Me
+        </h2>
         <p className="text-gray-300 text-center mb-12">
-          Have a question or want to work together? Fill out the form below and I’ll get back to you as soon as possible.
+          Have a question or want to work together? Fill out the form below and
+          I’ll get back to you as soon as possible.
         </p>
 
         <form
@@ -124,7 +134,9 @@ const Contact: React.FC = () => {
         </form>
 
         {formMessage && (
-          <p className={`mt-6 text-center ${messageColor} font-medium`}>{formMessage}</p>
+          <p className={`mt-6 text-center ${messageColor} font-medium`}>
+            {formMessage}
+          </p>
         )}
       </div>
     </section>
