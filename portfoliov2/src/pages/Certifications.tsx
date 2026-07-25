@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { certificates } from "../data/certificates";
+import { ScrollButton } from "../components/ScrollButton";
 
 const Certifications: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -29,13 +29,10 @@ const Certifications: React.FC = () => {
       </div>
 
       <div className="relative flex-1 flex items-center px-6">
-        <button
-          onClick={() => scroll("left")}
-          className="absolute left-4 z-20 p-3 rounded-full bg-black/50 hover:bg-black/70 transition"
-          aria-label="Scroll left"
-        >
-          <FaChevronLeft size={22} />
-        </button>
+        <ScrollButton
+          direction="left"
+          onScroll={() => scroll("left")}
+        />
 
         <div
           ref={scrollRef}
@@ -59,13 +56,10 @@ const Certifications: React.FC = () => {
           ))}
         </div>
 
-        <button
-          onClick={() => scroll("right")}
-          className="absolute right-4 z-20 p-3 rounded-full bg-black/50 hover:bg-black/70 transition"
-          aria-label="Scroll right"
-        >
-          <FaChevronRight size={22} />
-        </button>
+        <ScrollButton
+          direction="right"
+          onScroll={() => scroll("right")}
+        />
       </div>
 
       <style>{`
