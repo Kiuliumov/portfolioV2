@@ -1,23 +1,5 @@
 import { useState } from "react";
-import firebase from "firebase/compat/app";
-import "firebase/compat/firestore";
 import { FaUser, FaEnvelope, FaCommentDots } from "react-icons/fa";
-
-// Exposed API secrets, due to the limitations in github pages. Firebase rules don't allow foreign connections, so you can't really do anything with the secrets.
-const firebaseConfig = {
-  apiKey: "AIzaSyAj4hbemsnaFT6kaX3uffXiTf93ZdQQeWs",
-  authDomain: "reviews-7bc09.firebaseapp.com",
-  projectId: "reviews-7bc09",
-  storageBucket: "reviews-7bc09.firebasestorage.app",
-  messagingSenderId: "1087527214005",
-  appId: "1:1087527214005:web:b08ba8e386994a1e3017fc",
-  measurementId: "G-9503YFZX7X",
-};
-
-if (!firebase.apps.length) {
-  firebase.initializeApp(firebaseConfig);
-}
-const db = firebase.firestore();
 
 interface FormData {
   name: string;
@@ -48,24 +30,6 @@ const Contact: React.FC = () => {
       setFormMessage("Please fill in all fields.");
       setMessageColor("text-red-600");
       return;
-    }
-
-    try {
-      await db.collection("contacts").add({
-        name,
-        email,
-        message,
-        date: new Date().toISOString(),
-      });
-      setFormMessage("Message sent successfully. Thank you!");
-      setMessageColor("text-green-600");
-      setFormData({ name: "", email: "", message: "" });
-    } catch (error) {
-      console.error("Error sending message:", error);
-      setFormMessage(
-        "There was an error sending your message. Please try again.",
-      );
-      setMessageColor("text-gray-700");
     }
   };
 
