@@ -13,8 +13,6 @@ const Home = () => {
 						<img
 							src="https://kiuliumov.eu/images/image-banner.jpg"
 							alt="Dimitur Kiuliumov"
-              loading="lazy"
-              decoding="async"
 							className="rounded-2xl shadow-2xl max-w-xs sm:max-w-sm md:max-w-lg transform transition-transform duration-500 hover:scale-105"
 						/>
 					</div>
