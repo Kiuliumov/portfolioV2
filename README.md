@@ -1,5 +1,7 @@
 # Portfolio V2
 
+Version 1.0
+
 My developer portfolio built with React, TypeScript, and Tailwind.
 
 ## Stack
