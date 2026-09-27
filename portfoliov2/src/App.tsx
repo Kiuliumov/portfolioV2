@@ -2,7 +2,6 @@ import { Routes, Route } from "react-router-dom";
 import Nav from "./pages/partials/Nav";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Contact from "./pages/Contact";
 import Certifications from "./pages/Certifications";
 import Footer from "./pages/partials/Footer";
 import NotFound from "./pages/NotFound";
