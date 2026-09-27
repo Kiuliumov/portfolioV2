@@ -1,8 +1,9 @@
 import { FaGithub } from "react-icons/fa";
+import type { JSX } from "react/jsx-dev-runtime";
 
-const About = () => {
+const About = (): JSX.Element => {
   return (
-    <section className="relative pt-20 bg-gray-900 text-white min-h-screen flex flex-col justify-center items-center overflow-hidden">
+    <main className="relative pt-20 bg-gray-900 text-white min-h-screen flex flex-col justify-center items-center overflow-hidden" role="main">
       <div className="absolute inset-0 bg-gradient-to-tr from-purple-600/10 via-sky-400/20 to-indigo-700/10 blur-3xl pointer-events-none"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-12 md:py-20 md:px-12 w-full">
@@ -10,7 +11,9 @@ const About = () => {
           <div className="flex justify-center md:justify-end mb-8 md:mb-0 animate-fadeInUp">
             <img
               src="https://kiuliumov.eu/images/cantina.png"
-              alt="The Cantina"
+              alt="The Cantina — community and development studio"
+              loading="lazy"
+              decoding="async"
               className="rounded-2xl shadow-2xl max-w-xs sm:max-w-sm md:max-w-lg transform transition-transform duration-500 hover:scale-105"
             />
           </div>
@@ -56,7 +59,8 @@ const About = () => {
               <a
                 href="https://github.com/Kiuliumov"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
+                aria-label="Open Kiuliumov GitHub (opens in new tab)"
                 className="px-6 py-3 rounded-lg bg-sky-500 hover:bg-sky-400 font-medium flex justify-center items-center gap-2 transition-transform duration-300 transform hover:scale-105"
               >
                 <FaGithub /> GitHub
@@ -64,7 +68,8 @@ const About = () => {
               <a
                 href="https://discord.gg/UEjnQeAHYx"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
+                aria-label="Open Cantina Discord invite (opens in new tab)"
                 className="px-6 py-3 rounded-lg bg-gray-700 hover:bg-gray-600 font-medium flex justify-center items-center gap-2 transition-transform duration-300 transform hover:scale-105"
               >
                 Discord
@@ -73,7 +78,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>
+    </main>
   );
 };
 
