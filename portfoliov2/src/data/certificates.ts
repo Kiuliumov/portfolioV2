@@ -47,4 +47,8 @@ export const certificates = [
     img: "https://kiuliumov.eu/images/cert-10.png",
     link: "https://softuni.bg/certificates/details/257357/7896a680",
   },
+  {
+    img: "https://kiuliumov.eu/images/cert-11.png",
+    link: "https://coursera.org/verify/5FWTPG10XK1I"
+  }
 ];
