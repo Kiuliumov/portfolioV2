@@ -14,6 +14,8 @@ import {
   SiDotnet,
   SiCplusplus,
   SiNextdotjs,
+  SiDocker,
+  SiKubernetes,
 } from "react-icons/si";
 
 import {
@@ -24,6 +26,7 @@ import {
   FaJava,
   FaHtml5,
   FaCss3,
+  FaGit,
 } from "react-icons/fa";
 
 interface Skill {
@@ -52,4 +55,7 @@ export const skills: Skill[] = [
   { name: "Firebase", icon: SiFirebase },
   { name: "Google Cloud", icon: SiGooglecloud },
   { name: "AWS", icon: SiAmazon },
+  { name: "Docker", icon: SiDocker },
+  { name: "Kubernetes", icon: SiKubernetes },
+  { name: "Git", icon: FaGit },
 ];
