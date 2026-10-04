@@ -20,18 +20,11 @@ import {
   SiFastify,
   SiSvelte,
   SiNextdotjs,
-  SiGithub,
-  SiGitlab,
   SiRedis,
   SiMongodb,
-  SiGraphql,
   SiTailwindcss,
-  SiPrisma,
   SiRedux,
-  SiRabbitmq,
   SiNginx,
-  SiLinux,
-  SiPrometheus,
 } from "react-icons/si";
 
 
@@ -74,8 +67,6 @@ export const skills: Skill[] = [
   { name: "Fastify", icon: SiFastify },
   { name: "Django", icon: SiDjango },
   { name: ".NET / ASP.NET", icon: SiDotnet },
-  { name: "GraphQL", icon: SiGraphql },
-  { name: "Prisma", icon: SiPrisma },
 
   // Databases
   { name: "MySQL", icon: SiMysql },
@@ -85,7 +76,6 @@ export const skills: Skill[] = [
 
   // Cloud
   { name: "AWS", icon: SiAmazon },
-  { name: "AWS Lambda", icon: SiAmazon },
   { name: "Google Cloud", icon: SiGooglecloud },
   { name: "Firebase", icon: SiFirebase },
 
@@ -95,16 +85,7 @@ export const skills: Skill[] = [
   { name: "Jenkins", icon: SiJenkins },
   { name: "Terraform", icon: SiTerraform },
   { name: "Nginx", icon: SiNginx },
-  { name: "Prometheus", icon: SiPrometheus },
 
   // Version Control
   { name: "Git", icon: FaGit },
-  { name: "GitHub", icon: SiGithub },
-  { name: "GitLab", icon: SiGitlab },
-
-  // Messaging
-  { name: "RabbitMQ", icon: SiRabbitmq },
-
-  // Operating Systems
-  { name: "Linux", icon: SiLinux },
 ];
