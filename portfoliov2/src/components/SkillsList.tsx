@@ -14,7 +14,7 @@ export const SkillsList = () => {
               animationDelay: `${index * 100}ms`,
             }}
           >
-            <Icon />
+            <Icon size={16} />
             {skill.name}
           </span>
         );
