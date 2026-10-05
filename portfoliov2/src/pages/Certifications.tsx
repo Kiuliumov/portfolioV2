@@ -4,12 +4,13 @@ import { ScrollButton } from "../components/ScrollButton";
 
 const Certifications: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const scrollAmount = 400;
 
   const scroll = (direction: "left" | "right") => {
     if (!scrollRef.current) return;
 
     scrollRef.current.scrollBy({
-      left: direction === "left" ? -400 : 400,
+      left: direction === "left" ? -scrollAmount : scrollAmount,
       behavior: "smooth",
     });
   };
