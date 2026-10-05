@@ -23,9 +23,6 @@ const Certifications: React.FC = () => {
           Certifications
         </h1>
         <div className="mt-4 h-1 w-24 mx-auto bg-gradient-to-r from-purple-400 via-sky-400 to-indigo-500 rounded-full" />
-        <p className="text-gray-300 mt-4 text-lg md:text-xl">
-          Showcasing achievements and skills
-        </p>
       </div>
 
       <div className="relative flex-1 flex items-center px-6">
@@ -50,7 +47,7 @@ const Certifications: React.FC = () => {
               <img
                 src={cert.img}
                 alt={`Certificate ${index + 1}`}
-                className="h-48 sm:h-64 md:h-80 lg:h-[28rem] object-contain rounded-xl shadow-2xl"
+                className="h-48 sm:h-64 md:h-80 lg:h-[20rem] object-contain rounded-xl shadow-2xl"
               />
             </a>
           ))}
