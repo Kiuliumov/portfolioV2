@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Button from "../components/Button";
 
@@ -17,7 +18,11 @@ export function PaginatedGrid<T>({
   getKey,
   emptyMessage = "No items to display.",
 }: PaginatedGridProps<T>) {
-  const [currentPage, setCurrentPage] = useState(1);
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const pageParam = Number(searchParams.get("page"));
+  const currentPage =
+    Number.isInteger(pageParam) && pageParam > 0 ? pageParam : 1;
 
   const totalPages = Math.ceil(items.length / itemsPerPage);
   const safePage = Math.min(currentPage, Math.max(totalPages, 1));
@@ -28,8 +33,49 @@ export function PaginatedGrid<T>({
     startIndex + itemsPerPage
   );
 
+  // Correct invalid or out-of-range page parameters.
+  useEffect(() => {
+    const rawPage = searchParams.get("page");
+
+    if (safePage === 1 && rawPage === null) {
+      return;
+    }
+
+    if (rawPage !== String(safePage)) {
+      setSearchParams(
+        (previous) => {
+          const next = new URLSearchParams(previous);
+
+          if (safePage === 1) {
+            next.delete("page");
+          } else {
+            next.set("page", String(safePage));
+          }
+
+          return next;
+        },
+        { replace: true }
+      );
+    }
+  }, [safePage, searchParams, setSearchParams]);
+
   const goToPage = (page: number) => {
-    setCurrentPage(Math.max(1, Math.min(page, totalPages)));
+    const nextPage = Math.max(1, Math.min(page, totalPages));
+
+    setSearchParams(
+      (previous) => {
+        const next = new URLSearchParams(previous);
+
+        if (nextPage === 1) {
+          next.delete("page");
+        } else {
+          next.set("page", String(nextPage));
+        }
+
+        return next;
+      },
+      { preventScrollReset: true }
+    );
   };
 
   if (items.length === 0) {
