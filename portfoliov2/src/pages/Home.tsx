@@ -26,7 +26,7 @@ const Home = () => {
 							<span className="text-sky-400">full-stack developer</span> from
 							Bulgaria with a strong passion for programming and mathematics.
 							<br />I am currently working as a{" "}
-							<span className="text-sky-400">Python Developer</span> at{" "}
+							<span className="text-sky-400">Software Developer</span> at{" "}
 							<span className="text-sky-400">Nemetschek Bulgaria</span> and
 							pursuing a degree in Computer Science at the{" "}
 							<a
