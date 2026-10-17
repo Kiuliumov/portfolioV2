@@ -14,6 +14,7 @@
   "dependencies": {
     "@material-tailwind/react": "^2.1.10",
     "@tailwindcss/vite": "^4.1.12",
+    "axios": "^1.20.0",
     "gh-pages": "^6.3.0",
     "i18next": "^26.3.6",
     "react": "^19.1.1",

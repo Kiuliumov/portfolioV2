@@ -3,6 +3,7 @@ import Nav from "./pages/partials/Nav";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Certifications from "./pages/Certifications";
+import Contacts from "./pages/Contacts";
 import Footer from "./pages/partials/Footer";
 import NotFound from "./pages/NotFound";
 
@@ -19,6 +20,7 @@ function App() {
             path="/certifications"
             element={<Certifications></Certifications>}
           />
+          <Route path="/contacts" element={<Contacts />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
