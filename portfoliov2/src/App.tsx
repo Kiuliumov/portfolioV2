@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Nav from "./pages/partials/Nav";
 import Home from "./pages/Home";
-import About from "./pages/About";
 import Certifications from "./pages/Certifications";
 import Contacts from "./pages/Contacts";
 import Footer from "./pages/partials/Footer";
@@ -15,7 +14,6 @@ function App() {
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
           <Route
             path="/certifications"
             element={<Certifications></Certifications>}

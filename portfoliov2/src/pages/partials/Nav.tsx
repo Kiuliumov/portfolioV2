@@ -2,130 +2,142 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import CV from "../../assets/CV.pdf";
 
+const navigation = [
+  { title: "Home", path: "/" },
+  { title: "Certifications", path: "/certifications" },
+  { title: "Contacts", path: "/contacts" },
+];
+
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const location = useLocation();
-
-  const navigation = [
-    { title: "Home", path: "/" },
-    { title: "Certifications", path: "/certifications" },
-    { title: "About", path: "/about" },
-    {title: "Contacts", path: "/contacts" },
-  ];
+  const { pathname } = useLocation();
 
   useEffect(() => {
-    const handleClick = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (!target.closest(".menu-btn") && !target.closest(".mobile-menu")) {
-        setMenuOpen(false);
-      }
+    setMenuOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMenuOpen(false);
     };
-    document.addEventListener("click", handleClick);
-    return () => document.removeEventListener("click", handleClick);
-  }, []);
 
-  useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "auto";
+    window.addEventListener("keydown", closeOnEscape);
+
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", closeOnEscape);
+    };
   }, [menuOpen]);
 
+  const links = (mobile = false) =>
+    navigation.map(({ title, path }) => {
+      const active = pathname === path;
+
+      return (
+        <Link
+          key={path}
+          to={path}
+          aria-current={active ? "page" : undefined}
+          tabIndex={mobile && !menuOpen ? -1 : 0}
+          onClick={() => setMenuOpen(false)}
+          className={`transition-colors duration-300 ${
+            mobile
+              ? "text-3xl font-semibold"
+              : "border-b-2 py-2 text-sm font-medium"
+          } ${
+            active
+              ? mobile
+                ? "text-sky-400"
+                : "border-sky-400 text-sky-400"
+              : mobile
+                ? "text-gray-300 hover:text-sky-400"
+                : "border-transparent text-gray-400 hover:border-sky-400 hover:text-sky-400"
+          }`}
+        >
+          {title}
+        </Link>
+      );
+    });
+
+  const downloadButton = (mobile = false) => (
+    <a
+      href={CV}
+      download
+      onClick={() => setMenuOpen(false)}
+      tabIndex={mobile && !menuOpen ? -1 : 0}
+      className={`inline-flex items-center justify-center rounded-lg font-medium transition-all duration-300 ${
+        mobile
+          ? "mt-8 w-full max-w-xs bg-sky-500 px-6 py-3 text-white hover:bg-sky-400"
+          : "border border-gray-700 px-5 py-2.5 text-sm text-gray-300 hover:border-sky-400 hover:text-sky-400"
+      }`}
+    >
+      Download CV
+    </a>
+  );
+
   return (
-    <header className="fixed top-0 left-0 w-full z-50">
-      <div className="w-full bg-gray-900/95 backdrop-blur-sm shadow-md">
-        <nav className="max-w-screen-xl mx-auto px-4 md:px-8 flex items-center justify-between py-4">
-          <div className="flex items-center gap-3">
-            <h1 className="text-xl font-bold tracking-wide text-white">
-              The Cantina
-            </h1>
-          </div>
+    <header className="fixed left-0 top-0 z-50 w-full bg-gray-900 text-gray-400">
+      <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between border-b border-gray-700 px-6 md:px-12">
+        <Link
+          to="/"
+          onClick={() => setMenuOpen(false)}
+          className="text-lg font-bold text-white transition-colors hover:text-sky-400"
+        >
+          Kiuliumov
+        </Link>
 
-          <ul className="hidden md:flex gap-8 items-center">
-            {navigation.map((item, idx) => (
-              <li key={idx}>
-                <Link
-                  to={item.path}
-                  className={`text-white font-medium hover:text-sky-400 transition-colors duration-200 ${
-                    location.pathname === item.path ? "text-sky-400" : ""
-                  }`}
-                >
-                  {item.title}
-                </Link>
-              </li>
-            ))}
-            <li>
-              <a
-                href={CV}
-                download
-                className="bg-sky-400 text-white px-4 py-2 rounded-md font-medium hover:bg-sky-500 transition-colors duration-200"
-              >
-                Download CV
-              </a>
-            </li>
-          </ul>
-
-          <button
-            className="md:hidden menu-btn relative w-10 h-10 flex flex-col justify-center items-center gap-1.5 focus:outline-none z-50"
-            aria-label="Toggle menu"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            <span
-              className={`block w-7 h-0.5 bg-white rounded transition-transform duration-300 ${
-                menuOpen ? "rotate-45 translate-y-2" : ""
-              }`}
-            />
-            <span
-              className={`block w-7 h-0.5 bg-white rounded transition-opacity duration-300 ${
-                menuOpen ? "opacity-0" : "opacity-100"
-              }`}
-            />
-            <span
-              className={`block w-7 h-0.5 bg-white rounded transition-transform duration-300 ${
-                menuOpen ? "-rotate-45 -translate-y-2" : ""
-              }`}
-            />
-          </button>
-        </nav>
-      </div>
-
-      <div
-        className={`mobile-menu md:hidden fixed inset-0 z-50 flex flex-col transform transition-transform duration-300 ${
-          menuOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
-        style={{
-          background:
-            "linear-gradient(to bottom, rgba(30, 41, 59, 0.95), rgba(30, 41, 59, 0.9))",
-        }}
-      >
-        <div className="flex justify-end p-6">
-          <button
-            className="text-white text-3xl font-bold focus:outline-none"
-            aria-label="Close menu"
-            onClick={() => setMenuOpen(false)}
-          >
-            ✖
-          </button>
+        <div className="hidden items-center gap-8 md:flex">
+          {links()}
+          {downloadButton()}
         </div>
 
-        <div className="flex flex-col items-center justify-center flex-1 gap-8 text-2xl">
-          {navigation.map((item, idx) => (
-            <Link
-              key={idx}
-              to={item.path}
-              className={`text-white hover:text-sky-400 transition-colors duration-200 ${
-                location.pathname === item.path ? "text-sky-400 font-bold" : ""
-              }`}
-              onClick={() => setMenuOpen(false)}
-            >
-              {item.title}
-            </Link>
-          ))}
-          <a
-            href={CV}
-            download
-            className="bg-sky-400 text-white px-6 py-3 rounded-md font-medium hover:bg-sky-500 transition-colors duration-200"
-            onClick={() => setMenuOpen(false)}
+        <button
+          type="button"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-navigation"
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-lg border border-gray-700 transition-colors hover:border-sky-400 md:hidden"
+        >
+          <span
+            className={`h-0.5 w-5 rounded-full bg-gray-300 transition-transform ${
+              menuOpen ? "translate-y-2 rotate-45" : ""
+            }`}
+          />
+          <span
+            className={`h-0.5 w-5 rounded-full bg-gray-300 transition-opacity ${
+              menuOpen ? "opacity-0" : ""
+            }`}
+          />
+          <span
+            className={`h-0.5 w-5 rounded-full bg-gray-300 transition-transform ${
+              menuOpen ? "-translate-y-2 -rotate-45" : ""
+            }`}
+          />
+        </button>
+      </nav>
+
+      <div
+        id="mobile-navigation"
+        aria-hidden={!menuOpen}
+        inert={!menuOpen}
+        className={`fixed inset-0 z-40 bg-gray-900 transition-all duration-300 md:hidden ${
+          menuOpen
+            ? "visible opacity-100"
+            : "invisible pointer-events-none opacity-0"
+        }`}
+      >
+        <div className="flex min-h-full flex-col items-center justify-center gap-8 px-6 py-24">
+          <nav
+            aria-label="Mobile navigation"
+            className="flex flex-col items-center gap-8"
           >
-            Download CV
-          </a>
+            {links(true)}
+          </nav>
+
+          {downloadButton(true)}
         </div>
       </div>
     </header>
