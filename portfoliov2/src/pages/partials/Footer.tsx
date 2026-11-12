@@ -14,7 +14,7 @@ const Footer = () => {
     <footer className="bg-gray-900 text-gray-400 px-4 py-4 w-full">
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
         <div className="text-sm text-gray-400 text-center flex-1">
-          &copy; {new Date().getFullYear()} The Cantina. All rights reserved.
+          &copy; {new Date().getFullYear()} Dimitur Kyulyumov. All rights reserved.
         </div>
 
         <div className="hidden md:flex items-center gap-4">

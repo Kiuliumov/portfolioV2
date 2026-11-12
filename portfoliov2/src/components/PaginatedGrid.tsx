@@ -4,187 +4,147 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Button from "../components/Button";
 
 interface PaginatedGridProps<T> {
-  items: T[];
-  itemsPerPage?: number;
-  renderItem: (item: T, index: number) => React.ReactNode;
-  getKey: (item: T, index: number) => React.Key;
-  emptyMessage?: string;
+	items: T[];
+	itemsPerPage?: number;
+	renderItem: (item: T, index: number) => React.ReactNode;
+	getKey: (item: T, index: number) => React.Key;
+	emptyMessage?: string;
 }
 
 export function PaginatedGrid<T>({
-  items,
-  itemsPerPage = 6,
-  renderItem,
-  getKey,
-  emptyMessage = "No items to display.",
+	items,
+	itemsPerPage = 6,
+	renderItem,
+	getKey,
+	emptyMessage = "No items to display.",
 }: PaginatedGridProps<T>) {
-  const [searchParams, setSearchParams] = useSearchParams();
+	const [searchParams, setSearchParams] = useSearchParams();
 
-  const pageParam = Number(searchParams.get("page"));
-  const currentPage =
-    Number.isInteger(pageParam) && pageParam > 0 ? pageParam : 1;
+	const totalPages = Math.ceil(items.length / itemsPerPage);
+	const page = Number(searchParams.get("page")) || 1;
+	const currentPage = Math.min(
+		Number.isInteger(page) && page > 0 ? page : 1,
+		Math.max(totalPages, 1),
+	);
 
-  const totalPages = Math.ceil(items.length / itemsPerPage);
-  const safePage = Math.min(currentPage, Math.max(totalPages, 1));
+	const startIndex = (currentPage - 1) * itemsPerPage;
+	const currentItems = items.slice(startIndex, startIndex + itemsPerPage);
 
-  const startIndex = (safePage - 1) * itemsPerPage;
-  const currentItems = items.slice(
-    startIndex,
-    startIndex + itemsPerPage
-  );
+	const updatePage = (page: number, replace = false) => {
+		setSearchParams(
+			(params) => {
+				const next = new URLSearchParams(params);
 
-  // Correct invalid or out-of-range page parameters.
-  useEffect(() => {
-    const rawPage = searchParams.get("page");
+				if (page === 1) next.delete("page");
+				else next.set("page", String(page));
 
-    if (safePage === 1 && rawPage === null) {
-      return;
-    }
+				return next;
+			},
+			{ replace, preventScrollReset: !replace },
+		);
+	};
 
-    if (rawPage !== String(safePage)) {
-      setSearchParams(
-        (previous) => {
-          const next = new URLSearchParams(previous);
+	useEffect(() => {
+		const rawPage = searchParams.get("page");
 
-          if (safePage === 1) {
-            next.delete("page");
-          } else {
-            next.set("page", String(safePage));
-          }
+		if (rawPage !== (currentPage === 1 ? null : String(currentPage))) {
+			updatePage(currentPage, true);
+		}
+	}, [currentPage, searchParams]);
 
-          return next;
-        },
-        { replace: true }
-      );
-    }
-  }, [safePage, searchParams, setSearchParams]);
+	if (!items.length) {
+		return <p className="py-16 text-center text-gray-400">{emptyMessage}</p>;
+	}
 
-  const goToPage = (page: number) => {
-    const nextPage = Math.max(1, Math.min(page, totalPages));
+	const paginationClass =
+		"!border-slate-700 !bg-slate-800/60 !text-slate-300 hover:!border-slate-500 hover:!bg-slate-700/70 hover:!text-slate-100 disabled:!opacity-30";
 
-    setSearchParams(
-      (previous) => {
-        const next = new URLSearchParams(previous);
+	const pageButton = (page: number) => {
+		const active = currentPage === page;
 
-        if (nextPage === 1) {
-          next.delete("page");
-        } else {
-          next.set("page", String(nextPage));
-        }
+		return (
+			<Button
+				key={page}
+				variant={active ? "active" : "pagination"}
+				onClick={() => updatePage(page)}
+				ariaLabel={`Go to page ${page}`}
+				ariaCurrent={active ? "page" : undefined}
+				className={`!h-11 !w-11 !rounded-xl !p-0 ${
+					active
+						? "!border-slate-500 !bg-slate-600 !text-white !shadow-md"
+						: paginationClass
+				}`}
+			>
+				{page}
+			</Button>
+		);
+	};
 
-        return next;
-      },
-      { preventScrollReset: true }
-    );
-  };
+	const navigationButton = (direction: "previous" | "next") => {
+		const previous = direction === "previous";
 
-  if (items.length === 0) {
-    return (
-      <p className="py-16 text-center text-gray-400">
-        {emptyMessage}
-      </p>
-    );
-  }
+		return (
+			<Button
+				variant="pagination"
+				onClick={() => updatePage(currentPage + (previous ? -1 : 1))}
+				disabled={previous ? currentPage === 1 : currentPage === totalPages}
+				ariaLabel={`Go to ${direction} page`}
+				className={`!h-11 !w-auto !rounded-xl !px-4 ${paginationClass}`}
+			>
+				{previous && <FaChevronLeft aria-hidden="true" />}
+				<span className="hidden sm:inline">
+					{previous ? "Previous" : "Next"}
+				</span>
+				{!previous && <FaChevronRight aria-hidden="true" />}
+			</Button>
+		);
+	};
 
-  const paginationClass =
-    "!border-slate-700 !bg-slate-800/60 !text-slate-300 " +
-    "hover:!border-slate-500 hover:!bg-slate-700/70 " +
-    "hover:!text-slate-100 disabled:!opacity-30";
+	return (
+		<div>
+			<div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+				{currentItems.map((item, index) => {
+					const itemIndex = startIndex + index;
 
-  return (
-    <div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-        {currentItems.map((item, index) => {
-          const itemIndex = startIndex + index;
+					return (
+						<React.Fragment key={getKey(item, itemIndex)}>
+							{renderItem(item, itemIndex)}
+						</React.Fragment>
+					);
+				})}
+			</div>
 
-          return (
-            <React.Fragment key={getKey(item, itemIndex)}>
-              {renderItem(item, itemIndex)}
-            </React.Fragment>
-          );
-        })}
-      </div>
+			{totalPages > 1 && (
+				<nav
+					aria-label="Pagination"
+					className="mt-12 flex flex-col items-center gap-6"
+				>
+					<p className="text-sm text-slate-400">
+						Page{" "}
+						<span className="font-semibold text-slate-200">{currentPage}</span>{" "}
+						of {totalPages}
+					</p>
 
-      {totalPages > 1 && (
-        <nav
-          aria-label="Pagination"
-          className="mt-12 flex flex-col items-center gap-6"
-        >
-          <p className="text-sm text-slate-400">
-            Page{" "}
-            <span className="font-semibold text-slate-200">
-              {safePage}
-            </span>{" "}
-            of{" "}
-            <span className="font-semibold text-slate-400">
-              {totalPages}
-            </span>
-          </p>
+					<div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+						{navigationButton("previous")}
+						<div className="flex items-center gap-2">
+							{Array.from({ length: totalPages }, (_, i) => pageButton(i + 1))}
+						</div>
+						{navigationButton("next")}
+					</div>
 
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-            <Button
-              variant="pagination"
-              onClick={() => goToPage(safePage - 1)}
-              disabled={safePage === 1}
-              ariaLabel="Go to previous page"
-              className={`!w-auto !h-11 !px-4 !rounded-xl ${paginationClass}`}
-            >
-              <FaChevronLeft aria-hidden="true" />
-              <span className="hidden sm:inline">Previous</span>
-            </Button>
-
-            <div className="flex items-center gap-2">
-              {Array.from(
-                { length: totalPages },
-                (_, index) => index + 1
-              ).map((page) => {
-                const isActive = safePage === page;
-
-                return (
-                  <Button
-                    key={page}
-                    variant={isActive ? "active" : "pagination"}
-                    onClick={() => goToPage(page)}
-                    ariaLabel={`Go to page ${page}`}
-                    ariaCurrent={isActive ? "page" : undefined}
-                    className={`!h-11 !w-11 !p-0 !rounded-xl ${
-                      isActive
-                        ? "!border-slate-500 !bg-slate-600 !text-white !shadow-md !shadow-black/10"
-                        : paginationClass
-                    }`}
-                  >
-                    {page}
-                  </Button>
-                );
-              })}
-            </div>
-
-            <Button
-              variant="pagination"
-              onClick={() => goToPage(safePage + 1)}
-              disabled={safePage === totalPages}
-              ariaLabel="Go to next page"
-              className={`!w-auto !h-11 !px-4 !rounded-xl ${paginationClass}`}
-            >
-              <span className="hidden sm:inline">Next</span>
-              <FaChevronRight aria-hidden="true" />
-            </Button>
-          </div>
-
-          <p className="text-xs sm:text-sm text-slate-500">
-            Showing{" "}
-            <span className="font-medium text-slate-300">
-              {startIndex + 1}–
-              {Math.min(startIndex + itemsPerPage, items.length)}
-            </span>{" "}
-            of{" "}
-            <span className="font-medium text-slate-300">
-              {items.length}
-            </span>{" "}
-            items
-          </p>
-        </nav>
-      )}
-    </div>
-  );
+					<p className="text-sm text-slate-500">
+						Showing{" "}
+						<span className="font-medium text-slate-300">
+							{startIndex + 1}–
+							{Math.min(startIndex + itemsPerPage, items.length)}
+						</span>{" "}
+						of{" "}
+						<span className="font-medium text-slate-300">{items.length}</span>{" "}
+						items
+					</p>
+				</nav>
+			)}
+		</div>
+	);
 }

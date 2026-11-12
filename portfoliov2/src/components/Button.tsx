@@ -27,8 +27,9 @@ const variants: Record<ButtonVariant, string> = {
   pagination:
     "border border-slate-700 bg-gray-900/60 text-slate-300 hover:border-slate-500 hover:text-slate-100",
 
+
   active:
-    "border-transparent bg-gradient-to-r from-purple-500 via-sky-500 to-indigo-500 text-white shadow-lg shadow-purple-500/20",
+    "border border-sky-400 bg-sky-400 text-gray-900 shadow-md shadow-sky-400/20",
 };
 
 const Button: React.FC<ButtonProps> = ({
